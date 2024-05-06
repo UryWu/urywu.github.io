@@ -1,0 +1,54 @@
+{
+  "settingsVersion": "1.67.7",
+  "exclusionRules": [
+    {
+      "pattern": "https?://szhong.4399.com/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://localhost:8888/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://lab.mkblog.cn/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://36.158.146.65:8080/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://localhost:8888/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://cg.163.com/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://cg.163.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://shyyp.net/*",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "# Insert your preferred key mappings here.\n# 取消仅仅按t键打开新标签页\nunmap t\n\n# 添加打开特定引擎搜索快捷键\nmap <c-b> Vomnibar.activateInNewTab keyword=bilibili\nmap <c-B> Vomnibar.activateInNewTab keyword=bilibili_collection\nmap zh Vomnibar.activateInNewTab keyword=zhihu\nmap <c-o> Vomnibar.activateInNewTab keyword=quora\nmap <c-d> Vomnibar.activateInNewTab keyword=duckduckgo\nmap go Vomnibar.activateInNewTab keyword=google\nmap gv Vomnibar.activateInNewTab keyword=vovososo\nmap <a-t> Vomnibar.activateInNewTab keyword=fanyi\nmap <c-i> Vomnibar.activateInNewTab keyword=github\nmap yb Vomnibar.activateInNewTab keyword=youtube\nmap gl Vomnibar.activateInNewTab keyword=lagou\nmap aq Vomnibar.activateInNewTab keyword=aiqicha\nmap ty Vomnibar.activateInNewTab keyword=tianyancha\nmap ai Vomnibar.activateInNewTab keyword=maimai\nmap pi Vomnibar.activateInNewTab keyword=boss\nmap yh Vomnibar.activateInNewTab keyword=yangyang\nmap <a-y> Vomnibar.activateInNewTab keyword=yueyu\nmap Q visitPreviousTab\n\n\n# 取消打开剪贴板中网页按钮\nunmap P\nunmap p\n\n# 快捷键ctrl+q打开剪贴板中的网址或搜索关键词\nmap <c-q> openCopiedUrlInNewTab\n\n# 取消网页向下、上滚动\nunmap <c-e>\nunmap <c-y>",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": true,
+  "grabBackFocus": false,
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# du: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant\ngoogle: https://www.google.com/search?q=%s\nvovososo: https://g.vovososo.com/search?q=%s\nfanyi: https://fanyi.baidu.com#zh/en/%s\nbing_fanyi: https://www4.bing.com/dict/search?q=%s\nbilibili: https://search.bilibili.com/all?keyword=%s\nzhihu: https://www.zhihu.com/search?type=content&q=%s\nquora: https://www.quora.com/search?q=%s\ndoge.com: https://www.dogedoge.com/\nduckduckgo: https://duckduckgo.com/?q=%s\ncsdn.net: https://mp.csdn.net/\ngithub: https://github.com/search?q=%s\nyoutube: https://www.youtube.com/results?search_query=%s\nlagou: https://www.lagou.com/wn/jobs?labelWords=&fromSearch=true&suginput=&kd=%s\naiqicha: https://aiqicha.baidu.com/s?q=%s\ntianyancha: https://www.tianyancha.com/search?key=%s\nbilibili_collection: https://space.bilibili.com/22670468/favlist?keyword=%s&searchFid=115418968&fid=115418968&type=1\nmaimai: https://maimai.cn/web/search_center?type=feed&query=%s&highlight=true\nboss: https://www.zhipin.com/web/geek/job?query=%s&city=101280600\nyangyang: https://shyyp.net/searoh?q=%s\nyueyu: https://fanyi.baidu.com#zh/yue/%s",
+  "searchUrl": "https://cn.bing.com/search?q=%s",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E3BE23),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: red;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
+}
