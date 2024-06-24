@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>生成海报</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <div id="app">
+    <div class="container" v-if="!posterVisible">
+      <h1>创建你的剧本杀海报</h1>
+      <input type="text" v-model="playName" placeholder="剧本杀本名" class="input-text">
+      <input type="text" v-model="playTime" placeholder="开始时间" class="input-text">
+      <input type="text" v-model="DM" placeholder="主持人" class="input-text">
+      <input type="text" v-model="actor" placeholder="演员" class="input-text">
+      <input type="text" v-model="character" placeholder="角色" class="input-text">
+
+      <button @click.stop="generatePoster" class="generate-button">生成海报</button>
+    </div>
+    <div class="poster" v-if="posterVisible">
+      <img :src="imageUrl" alt="海报图片" class="poster-image">
+      <!-- <p>用户输入的文本：{{ playName }}</p>
+      <p>用户输入的文本：{{ playTime }}</p>
+      <p>用户输入的文本：{{ DM }}</p>
+      <p>用户输入的文本：{{ actor }}</p>
+      <p>用户输入的文本：{{ character }}</p> -->
+      <div class="full-screen-container">
+        <button @click.stop="back" class="back-button">返回</button>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        playName:'',
+        playTime:'',
+        DM:'',
+        actor:'',
+        character:'',
+        posterVisible: false,
+        imageUrl:"./images/剧本杀背景.png"
+      },
+      methods: {
+        generatePoster: function() {
+          this.posterVisible = true;
+        },
+        back: function() {
+          this.posterVisible = false;
+          this.playName = '';
+          this.playTime = '';
+          this.DM = '';
+          this.actor = '';
+          this.character = '';
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
