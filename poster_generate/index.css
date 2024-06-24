@@ -1,0 +1,104 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  
+  .input-text {
+    height: 20px;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  .input-text:focus {
+    outline: none;
+    border-color: #5cb85c;
+    box-shadow: 0 0 8px rgba(92,184,92,0.2);
+  }
+  
+  .generate-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+  }
+  
+  .generate-button:hover {
+    background-color: #4cae4c;
+  }
+
+  .full-screen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* 设置容器高度为视口高度 */
+    width: 100%; /* 设置容器宽度为100%，即全宽 */
+  }
+  
+  .back-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #4cae4c;
+  }
+  
+  .poster {
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    /* 高度和宽度根据需要设置，如果希望整个视口居中，可以使用 vh 和 vw 单位 */
+    display: flex;
+    justify-content: center;/* 确保了子元素在水平方向上都居中。 */
+    flex-wrap: wrap;
+    align-items: center;/* 确保了子元素在垂直方向上都居中。 */
+  }
+  
+  
+
+  .poster-image {
+      width: 100%;  /* 或者使用 max-width 来限制图片的最大宽度 */
+      height: 100%; 
+      object-fit: cover;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+  
