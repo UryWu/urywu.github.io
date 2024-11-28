@@ -147,7 +147,7 @@ delete or =null =undefine
 
 ### 让宏任务中的微任务同步执行问题
 
-
+#### 数组的情况
 
 ```javascript
 function funcA(ms) {
@@ -179,6 +179,50 @@ async function main() {
 
 function watch(a) {
   // 可以在这里添加代码来观察a的值
+}
+
+main();
+```
+
+
+
+#### 单个变量
+
+```typescript
+function funcA(ms) {
+  return new Promise((resolve) => {
+    console.log("funcA过程", 1);
+    resolve(1); // 返回值
+  });
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function main() {
+  let a = 0;
+
+  // 使用 Promise.all 包裹单个任务的数组
+  await Promise.all([
+    (async () => {
+      await funcA(0).then((resolve) => {
+        a = resolve;
+        console.log("funcA回调结果", a);
+      });
+    })()
+  ]);
+
+  // 由于 funcA 已完成，以下代码会在它完成后执行
+  console.log("c");
+  console.log("d");
+
+  // 打印最终的结果
+  console.log("main结果", a);
+}
+
+function watch(a) {
+  // 可以在这里添加代码来观察 a 的值
 }
 
 main();
