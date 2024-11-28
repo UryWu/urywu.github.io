@@ -145,3 +145,44 @@ delete or =null =undefine
 
 
 
+### 让宏任务中的微任务同步执行问题
+
+
+
+```javascript
+function funcA(ms) {
+  return new Promise((resolve) => {
+    console.log("funcA过程", 1);
+    resolve(1); // 返回值
+  });
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function main() {
+  let array = [0];
+
+  // 使用 Promise.all 等待所有的 funcA 完成
+  await Promise.all(array.map((item, i) => funcA(0).then((resolve) => {
+    item =  resolve;
+    console.log("funcA回调结果",item);
+    array[i] = item;
+  }));
+
+  // 由于所有的 funcA 都完成了，以下代码会在它们完成后执行
+  console.log("c");
+  console.log("d");
+  array.forEach((item, i) => console.log("main结果", item));
+}
+
+function watch(a) {
+  // 可以在这里添加代码来观察a的值
+}
+
+main();
+
+这个可以。
+```
+
